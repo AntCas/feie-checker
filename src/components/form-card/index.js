@@ -17,7 +17,7 @@ export default class FormCard extends Component {
   render() {
     const { currAnswer } = this.state;
 
-    const { onNext, onBack, content } = this.props,
+    const { onNext, onBack, content, isLast } = this.props,
           { question, helpText, answers } = content;
 
     const labels = _.map(_.keys(answers), (answer, i) =>
@@ -48,7 +48,7 @@ export default class FormCard extends Component {
             <div className="button-container">
               <Button onSubmit={ () => onNext({[currAnswer]: answers[currAnswer]}) }
                 type="cta"
-                label="Next Question" />
+                label={ `${isLast ? 'See Results' : 'Next Question'}` } />
             </div>
           </div>
         </div>
