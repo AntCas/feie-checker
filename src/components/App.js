@@ -165,7 +165,8 @@ class App extends Component {
     if (displayForm) {
       appContent = <FormCard content={ questions[currQuestion] }
                       onNext={ this.nextQuestion }
-                      onBack={ this.prevQuestion } />;
+                      onBack={ this.prevQuestion }
+                      isLast={ currQuestion === questions.length - 1 } />;
     } else if (displayAnalysis) {
       appContent = <AnalysisCard onSubmit={ this.startOver }
                       results={ questions } />;
