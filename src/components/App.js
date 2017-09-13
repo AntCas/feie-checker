@@ -99,6 +99,9 @@ class App extends Component {
         <div className="App-header">
           <h2>FEIE Checker</h2>
         </div>
+        <div className={ `question-counter ${displayForm ? '' : 'hide'}` }>
+          <span>{ `Question ${currQuestion + 1} of ${questions.length}` }</span>
+        </div>
         <div className="App-content">
           { displayForm ? <FormCard content={ questions[currQuestion] } onSubmit={ this.nextQuestion } /> : <TitleCard onSubmit={ this.getMyResults } /> }
         </div>
