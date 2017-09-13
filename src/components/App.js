@@ -102,6 +102,9 @@ class App extends Component {
         <div className={ `question-counter ${displayForm ? '' : 'hide'}` }>
           <span>{ `Question ${currQuestion + 1} of ${questions.length}` }</span>
         </div>
+        <div className={ `progress-bar ${displayForm ? '' : 'hide'}` }>
+          <div className='indicator' style={{ width: (displayForm ? (((currQuestion + 1)/questions.length) * 100) : 0) + '%'}}></div>
+        </div>
         <div className="App-content">
           { displayForm ? <FormCard content={ questions[currQuestion] } onSubmit={ this.nextQuestion } /> : <TitleCard onSubmit={ this.getMyResults } /> }
         </div>

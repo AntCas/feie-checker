@@ -15,7 +15,7 @@ export default class FormCard extends Component {
             <h2>{ `${helpText}` }</h2>
           </div>
           <div className="button" onClick={ onSubmit }>
-            <span>Get My Results</span>
+            <span>Next Question</span>
           </div>
         </div>
       </div>

@@ -63,6 +63,25 @@
   opacity: 0;
 }
 
+/* Progress Bar Styles */
+.progress-bar {
+  height: 6px;
+
+  transition: height .6s;
+}
+
+.progress-bar .indicator {
+  width: 0px;
+  height: 6px;
+  background: #0096ff;
+
+  transition: width .6s;
+}
+
+.progress-bar.hide {
+  height: 0px;
+}
+
 /* Footer Styles */
 .App-footer {
   margin-bottom: 12px;
