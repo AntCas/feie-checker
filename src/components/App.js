@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import AnalysisCard from './analysis-card';
 import FormCard from './form-card';
 import TitleCard from './title-card';
 
@@ -28,7 +29,7 @@ const questions = [{
   question: 'Will you spend fewer than 35 days in the US?',
   helpText: 'If yes, then you qualify under the Physical Presence Test, If no then you must qualify under the BFR test. Note that if you spend more than 24 hours anywhere that is not in a foreign country (international waters, traveling between two foreign countries by passing through the USA, most likely Antartica), that will count as a full day towards your 35 day limit. More information about specific scenarios: ',
   answers:  [YES, NO]
-}, {
+},/* {
   question: 'Do you work for the US Government or Military?',
   helpText: 'If you are living in the foreign country as part of a government contract or stationed there as part of the armed forces, then you do not qualify as a BFR.',
   answers:  [YES, NO]
@@ -68,15 +69,16 @@ const questions = [{
   question: '(If yes to the previous) Do any of your family members live there?',
   helpText: 'If yes, you might still qualify as a BFR, but most likely you do not qualify.',
   answers:  [YES, NO]
-}];
+}*/];
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      displayForm:  false,
-      currQuestion: 0
+      displayForm:      false,
+      displayAnalysis:  false,
+      currQuestion:     0
     };
   }
 
@@ -86,27 +88,69 @@ class App extends Component {
 
   nextQuestion = () => {
     /* TODO: Put all the logic in here around follow up questions and weighing answers */
-    this.setState({ currQuestion: this.state.currQuestion + 1 });
-  };
+    const { currQuestion } = this.state;
+
+    if (currQuestion < questions.length - 1) {
+      this.setState({ currQuestion: currQuestion + 1 });
+    } else {
+      this.setState({
+        displayForm:     false,
+        displayAnalysis: true
+      });
+    }
+  }
+
+  prevQuestion = () => {
+    const { currQuestion } = this.state;
+
+    this.setState({
+      displayForm:  currQuestion === 1 ? false : true,
+      currQuestion: currQuestion - 1
+    });
+  }
+
+  startOver = () => {
+    this.setState({
+      displayAnalysis: false,
+      currQuestion:    0
+    });
+  }
 
   render() {
-    const { displayForm, currQuestion } = this.state;
+    const {
+      displayForm,
+      displayAnalysis,
+      currQuestion
+    } = this.state;
 
-    console.log(questions.length);
+    const questionCounter = `Question ${currQuestion + 1} of ${questions.length}`,
+          percentComplete = (displayForm || displayAnalysis ? (((currQuestion + 1)/questions.length) * 100) : 0) + '%';
+
+    let appContent;
+
+    if (displayForm) {
+      appContent = <FormCard content={ questions[currQuestion] }
+                      onNext={ this.nextQuestion }
+                      onBack={ this.prevQuestion } />;
+    } else if (displayAnalysis) {
+      appContent = <AnalysisCard onSubmit={ this.startOver }/>;
+    } else {
+      appContent = <TitleCard onSubmit={ this.getMyResults } />;
+    }
 
     return (
       <div className="App">
         <div className="App-header">
           <h2>FEIE Checker</h2>
         </div>
-        <div className={ `question-counter ${displayForm ? '' : 'hide'}` }>
-          <span>{ `Question ${currQuestion + 1} of ${questions.length}` }</span>
+        <div className={ `question-counter ${displayForm || displayAnalysis ? '' : 'hide'}` }>
+          <span>{ `${displayAnalysis ? 'Analysis' : questionCounter}`  }</span>
         </div>
-        <div className={ `progress-bar ${displayForm ? '' : 'hide'}` }>
-          <div className='indicator' style={{ width: (displayForm ? (((currQuestion + 1)/questions.length) * 100) : 0) + '%'}}></div>
+        <div className="progress-bar">
+          <div className='indicator' style={{ width: percentComplete }}></div>
         </div>
         <div className="App-content">
-          { displayForm ? <FormCard content={ questions[currQuestion] } onSubmit={ this.nextQuestion } /> : <TitleCard onSubmit={ this.getMyResults } /> }
+          { appContent }
         </div>
         <div className="App-footer">
           <hr />

@@ -14,7 +14,7 @@ export default class FormCard extends Component {
   }
 
   render() {
-    const { onSubmit, content } = this.props,
+    const { onNext, onBack, content } = this.props,
           { question, helpText, answers } = content;
 
     const labels = _.map(answers, (answer, i) =>
@@ -36,7 +36,7 @@ export default class FormCard extends Component {
           <form>
             { labels }
           </form>
-          <div className="button" onClick={ onSubmit }>
+          <div className="button" onClick={ onNext }>
             <span>Next Question</span>
           </div>
         </div>
