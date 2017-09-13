@@ -1,0 +1,29 @@
+.physical-presence {
+  padding: 16px;
+}
+
+.physical-presence .content h2 {
+  font-size: 16px;
+}
+
+.physical-presence .content p, span {
+  font-size: 14px;
+}
+
+.physical-presence a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.physical-presence form label {
+  width: 100%;
+  display: inline-block;
+}
+
+.physical-presence form label input {
+  margin-left: 8px;
+}
+
+.physical-presence .ppt-advice p.hide {
+  display: none;
+}

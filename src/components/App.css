@@ -1,0 +1,110 @@
+/* Page Styles */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  height: 48px;
+  padding: 8px;
+  color: black;
+  background: #1b1b1b;
+}
+
+.App-header h2 {
+  align-self: center;
+  margin-left: 16px;
+
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 200;
+  color: white;
+}
+
+.App-content {
+  width: 100%;
+  height: 85vh;
+  margin: auto;
+  text-align: left;
+}
+
+@media (min-width: 769px) {
+  .App-content {
+    width: 60%;
+  }
+}
+
+/* Footer Styles */
+.App-footer {
+  margin-bottom: 12px;
+}
+
+.App-footer hr {
+  width: 80%;
+  color: grey;
+  opacity: .7;
+}
+
+.App-footer span {
+  font-family: Roboto;
+  color: grey;
+  opacity: .7;
+  font-size: 12px;
+}
+
+/* Card Styles */
+.card {
+  display: flex;
+  max-width: 600px;
+  height: 480px;
+  margin: auto;
+}
+
+.card-content {
+  align-self: center;
+  
+  padding: 0 12px;
+}
+
+.card h1 {
+  text-align: center;
+
+  font-family: Lato;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.card .sub-headers {
+  margin-top: 42px;
+  padding: 0px 16px;
+}
+
+.card .sub-headers h2 {
+  text-align: center;
+
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Button Styles */
+.card .button {
+  display: flex;
+  height: 42px;
+  width: 144px;
+  margin: 48px auto 0;
+
+  border-radius: 12px;
+  background: #ff6900;
+}
+
+.card .button span {
+  align-self: center;
+  margin: auto;
+
+  font-family: Roboto;
+  font-weight: 300;
+  color: white;
+}
+
+
