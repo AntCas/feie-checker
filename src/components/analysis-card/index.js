@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Button from '../button';
+
 import './style.css';
 
 export default class AnalysisCard extends Component {
@@ -23,9 +25,9 @@ export default class AnalysisCard extends Component {
           </div>
           <form>
           </form>
-          <div className="button" onClick={ onSubmit }>
-            <span>Start Over</span>
-          </div>
+          <Button onSubmit={ onSubmit }
+            type="cta"
+            label="Start Over" />
         </div>
       </div>
     );

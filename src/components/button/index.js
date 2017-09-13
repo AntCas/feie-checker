@@ -4,10 +4,14 @@ import './style.css';
 
 export default class Button  extends Component {
   render() {
-    const { onSubmit, label } = this.props;
+    const {
+      onSubmit,
+      type,
+      label
+    } = this.props;
 
     return (
-      <div className="button" onClick={ onSubmit }>
+      <div className={ `button ${type}`} onClick={ onSubmit }>
         <span>{ label }</span>
       </div>
     );

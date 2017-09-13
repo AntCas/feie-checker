@@ -38,8 +38,10 @@ export default class FormCard extends Component {
             { labels }
           </form>
           <Button onSubmit={ onBack }
+            type="beta"
             label="Back" />
           <Button onSubmit={ onNext }
+            type="cta"
             label="Next Question" />
         </div>
       </div>

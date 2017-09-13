@@ -1,12 +1,6 @@
 /* Button Styles */
 .button {
   display: flex;
-  height: 42px;
-  width: 144px;
-
-  border-radius: 12px;
-  background: #ff6900;
-
   cursor: pointer;
 }
 
@@ -20,5 +14,20 @@
 
   font-family: Roboto;
   font-weight: 300;
+}
+
+.button.cta {
+  height: 42px;
+  width: 144px;
+
+  border-radius: 12px;
+  background: #ff6900;
+}
+
+.button.cta span {
   color: white;
+}
+
+.button.beta {
+  text-decoration: underline;
 }

@@ -17,6 +17,7 @@ export default class TitleCard extends Component {
             <h2>Take this test to see if you qualify.</h2>
           </div>
           <Button onSubmit={ onSubmit }
+            type="cta"
             label="Get My Results" />
         </div>
       </div>
