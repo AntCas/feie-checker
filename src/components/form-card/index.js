@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 import './style.css';
 
-export default class TitleCard extends Component {
+export default class FormCard extends Component {
   render() {
-    const { onSubmit } = this.props;
+    const { onSubmit, content } = this.props,
+          { question, helpText, answers } = content;
 
     return (
       <div className="title-card">
         <div className="card-content">
-          <h1>Do you qualify for the Foreign Income Tax Exemption?</h1>
+          <h1>{ `${question}`  }</h1>
           <div className="sub-headers">
-            <h2>The FEIE can save you thousands of dollars per year if you live abroad.</h2>
-            <h2>Take this test to see if you qualify.</h2>
+            <h2>{ `${helpText}` }</h2>
           </div>
           <div className="button" onClick={ onSubmit }>
             <span>Get My Results</span>

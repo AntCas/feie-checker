@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import FormCard from './form-card';
 import TitleCard from './title-card';
 
 import './reset.css';
@@ -76,7 +77,7 @@ class App extends Component {
 
     this.state = {
       displayForm:  false,
-      currQuestion: 1
+      currQuestion: 0
     };
   }
 
@@ -84,8 +85,12 @@ class App extends Component {
     this.setState({ displayForm: true }); 
   };
 
+  nextQuestion = () => {
+    this.setState({ currQuestion: this.state.currQuestion + 1 });
+  };
+
   render() {
-    const { displayForm } = this.state;
+    const { displayForm, currQuestion } = this.state;
 
     console.log(questions.length);
 
@@ -95,7 +100,7 @@ class App extends Component {
           <h2>FEIE Checker</h2>
         </div>
         <div className="App-content">
-          { displayForm ? '' : <TitleCard onClick={ this.getMyResults } /> }
+          { displayForm ? <FormCard content={ questions[currQuestion] } onSubmit={ this.nextQuestion } /> : <TitleCard onSubmit={ this.getMyResults } /> }
         </div>
         <div className="App-footer">
           <hr />
