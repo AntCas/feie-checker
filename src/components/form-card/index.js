@@ -10,19 +10,21 @@ export default class FormCard extends Component {
     super(props);
 
     this.state = {
-      answer: null
+      currAnswer: null
     };
   }
 
   render() {
+    const { currAnswer } = this.state;
+
     const { onNext, onBack, content } = this.props,
           { question, helpText, answers } = content;
 
-    const labels = _.map(answers, (answer, i) =>
+    const labels = _.map(_.keys(answers), (answer, i) =>
       <label key={ i }>
           <input type='radio'
-            checked={ answer === this.state.answer }
-            onClick={ () => this.setState({ answer }) } />
+            checked={ answer === currAnswer }
+            onClick={ () => this.setState({ currAnswer: answer }) } />
           <span>{ `${answer}` }</span>
       </label>
     );
@@ -44,7 +46,7 @@ export default class FormCard extends Component {
                 label="Back" />
             </div>
             <div className="button-container">
-              <Button onSubmit={ onNext }
+              <Button onSubmit={ () => onNext({[currAnswer]: answers[currAnswer]}) }
                 type="cta"
                 label="Next Question" />
             </div>

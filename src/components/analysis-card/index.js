@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 
 import Button from '../button';
@@ -16,6 +17,12 @@ export default class AnalysisCard extends Component {
   render() {
     const { onSubmit, results } = this.props;
 
+    const analysis = _.map(results, (result, i) =>
+      <div className="result" key={ i }>
+        <h3>{ `${result.question}` }</h3>
+      </div>
+    );
+
     return (
       <div className="analysis-card">
         <div className="card-content">
@@ -23,8 +30,7 @@ export default class AnalysisCard extends Component {
           <div className="sub-headers">
             <h2>{ `test` }</h2>
           </div>
-          <form>
-          </form>
+          { analysis }
           <Button onSubmit={ onSubmit }
             type="cta"
             label="Start Over" />
