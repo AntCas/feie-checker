@@ -6,14 +6,14 @@
   margin: auto;
 }
 
-.card-content {
+.form-card .card-content {
   align-self: center;
   
   padding: 0 12px;
 }
 
 .form-card h1 {
-  text-align: center;
+  text-align: left;
 
   font-family: Lato;
   font-size: 24px;
@@ -21,15 +21,83 @@
 }
 
 .form-card .sub-headers {
-  margin-top: 42px;
-  padding: 0px 16px;
+  margin-top: 24px;
 }
 
 .form-card .sub-headers h2 {
-  text-align: center;
+  text-align: left;
 
   font-family: Roboto;
   font-size: 16px;
   line-height: 1.5;
 }
 
+/* Form Styles */
+.form-card form {
+  margin-top: 24px;
+}
+
+.form-card label {
+  display: flex;
+  height: 48px;
+  padding-left: 24px;
+
+  border-top: 1px solid #dfdfdf;
+
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.form-card label:last-child {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.form-card label:hover {
+  background: #fcfcfc;
+}
+
+.form-card label span {
+  margin-left: 24px;
+}
+
+.form-card label span, input {
+  align-self: center;
+}
+
+/* Form Navigation */
+.form-card .navigation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+}
+
+.form-card .navigation .button-container {
+  margin: auto;
+}
+
+.form-card .navigation .button-container:first-child {
+  order: 2;
+  margin-top: 24px;
+}
+
+.form-card .navigation .button-container:last-child {
+  order: 1;
+}
+
+@media (min-width: 769px) {
+  .form-card .navigation {
+    flex-direction: row;
+  }
+
+  .form-card .navigation .button-container:first-child {
+    order: 1;
+    margin-top: 0px;
+    margin: 0;
+    align-self: center;
+  }
+
+  .form-card .navigation .button-container:last-child {
+    order: 2;
+    margin-left: 24px;
+  }
+}

@@ -20,10 +20,10 @@ export default class FormCard extends Component {
 
     const labels = _.map(answers, (answer, i) =>
       <label key={ i }>
-          { `${answer}` }
           <input type='radio'
             checked={ answer === this.state.answer }
             onClick={ () => this.setState({ answer }) } />
+          <span>{ `${answer}` }</span>
       </label>
     );
 
@@ -37,12 +37,18 @@ export default class FormCard extends Component {
           <form>
             { labels }
           </form>
-          <Button onSubmit={ onBack }
-            type="beta"
-            label="Back" />
-          <Button onSubmit={ onNext }
-            type="cta"
-            label="Next Question" />
+          <div className="navigation">
+            <div className="button-container">
+              <Button onSubmit={ onBack }
+                type="beta"
+                label="Back" />
+            </div>
+            <div className="button-container">
+              <Button onSubmit={ onNext }
+                type="cta"
+                label="Next Question" />
+            </div>
+          </div>
         </div>
       </div>
     );
