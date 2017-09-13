@@ -42,6 +42,12 @@
 
   border-radius: 12px;
   background: #ff6900;
+
+  cursor: pointer;
+}
+
+.title-card .button:hover {
+  opacity: .9;
 }
 
 .title-card .button span {
