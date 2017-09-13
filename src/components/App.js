@@ -8,7 +8,6 @@ import './App.css';
 
 const YES             = 'Yes',
       NO              = 'No',
-      NUMBER          = 'Number',
       PURCHASED_HOUSE = 'Purchased House',
       RENTED_HOUSE    = 'Rented House or Apartment',
       RENTED_ROOM     = 'Rented Room',
@@ -22,9 +21,9 @@ const YES             = 'Yes',
       OTHER           = 'Other';
 
 const questions = [{
-  question: 'How long will you be outside the US?',
+  question: 'Will you spend at least a year outside of the US?',
   helpText: 'You must live outside the US for 12 consecutive months in order to qualify.',
-  answers:  [NUMBER]
+  answers:  [YES, NO]
 }, {
   question: 'Will you spend fewer than 35 days in the US?',
   helpText: 'If yes, then you qualify under the Physical Presence Test, If no then you must qualify under the BFR test. Note that if you spend more than 24 hours anywhere that is not in a foreign country (international waters, traveling between two foreign countries by passing through the USA, most likely Antartica), that will count as a full day towards your 35 day limit. More information about specific scenarios: ',
@@ -86,6 +85,7 @@ class App extends Component {
   };
 
   nextQuestion = () => {
+    /* TODO: Put all the logic in here around follow up questions and weighing answers */
     this.setState({ currQuestion: this.state.currQuestion + 1 });
   };
 
