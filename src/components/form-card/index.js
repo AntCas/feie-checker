@@ -1,6 +1,7 @@
 import _ from 'lodash';
-
 import React, { Component } from 'react';
+
+import Button from '../button';
 
 import './style.css';
 
@@ -27,7 +28,7 @@ export default class FormCard extends Component {
     );
 
     return (
-      <div className="title-card">
+      <div className="form-card">
         <div className="card-content">
           <h1>{ `${question}`  }</h1>
           <div className="sub-headers">
@@ -36,12 +37,10 @@ export default class FormCard extends Component {
           <form>
             { labels }
           </form>
-          <div className="button" onClick={ onBack }>
-            <span>Back</span>
-          </div>
-          <div className="button" onClick={ onNext }>
-            <span>Next Question</span>
-          </div>
+          <Button onSubmit={ onBack }
+            label="Back" />
+          <Button onSubmit={ onNext }
+            label="Next Question" />
         </div>
       </div>
     );

@@ -1,0 +1,24 @@
+/* Button Styles */
+.button {
+  display: flex;
+  height: 42px;
+  width: 144px;
+
+  border-radius: 12px;
+  background: #ff6900;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: .9;
+}
+
+.button span {
+  align-self: center;
+  margin: auto;
+
+  font-family: Roboto;
+  font-weight: 300;
+  color: white;
+}

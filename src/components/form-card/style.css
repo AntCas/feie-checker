@@ -1,5 +1,5 @@
 /* Card Styles */
-.title-card {
+.form-card {
   display: flex;
   max-width: 600px;
   height: 480px;
@@ -12,7 +12,7 @@
   padding: 0 12px;
 }
 
-.title-card h1 {
+.form-card h1 {
   text-align: center;
 
   font-family: Lato;
@@ -20,12 +20,12 @@
   line-height: 1.5;
 }
 
-.title-card .sub-headers {
+.form-card .sub-headers {
   margin-top: 42px;
   padding: 0px 16px;
 }
 
-.title-card .sub-headers h2 {
+.form-card .sub-headers h2 {
   text-align: center;
 
   font-family: Roboto;
@@ -33,28 +33,3 @@
   line-height: 1.5;
 }
 
-/* Button Styles */
-.title-card .button {
-  display: flex;
-  height: 42px;
-  width: 144px;
-  margin: 48px auto 0;
-
-  border-radius: 12px;
-  background: #ff6900;
-
-  cursor: pointer;
-}
-
-.title-card .button:hover {
-  opacity: .9;
-}
-
-.title-card .button span {
-  align-self: center;
-  margin: auto;
-
-  font-family: Roboto;
-  font-weight: 300;
-  color: white;
-}

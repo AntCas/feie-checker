@@ -33,28 +33,7 @@
   line-height: 1.5;
 }
 
-/* Button Styles */
 .title-card .button {
-  display: flex;
-  height: 42px;
-  width: 144px;
   margin: 48px auto 0;
-
-  border-radius: 12px;
-  background: #ff6900;
-
-  cursor: pointer;
 }
 
-.title-card .button:hover {
-  opacity: .9;
-}
-
-.title-card .button span {
-  align-self: center;
-  margin: auto;
-
-  font-family: Roboto;
-  font-weight: 300;
-  color: white;
-}

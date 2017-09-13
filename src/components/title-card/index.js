@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Button from '../button';
+
 import './style.css';
 
 export default class TitleCard extends Component {
@@ -14,9 +16,8 @@ export default class TitleCard extends Component {
             <h2>The FEIE can save you thousands of dollars per year if you live abroad.</h2>
             <h2>Take this test to see if you qualify.</h2>
           </div>
-          <div className="button" onClick={ onSubmit }>
-            <span>Get My Results</span>
-          </div>
+          <Button onSubmit={ onSubmit }
+            label="Get My Results" />
         </div>
       </div>
     );
