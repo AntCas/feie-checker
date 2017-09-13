@@ -36,6 +36,9 @@ export default class FormCard extends Component {
           <form>
             { labels }
           </form>
+          <div className="button" onClick={ onBack }>
+            <span>Back</span>
+          </div>
           <div className="button" onClick={ onNext }>
             <span>Next Question</span>
           </div>

@@ -104,8 +104,8 @@ class App extends Component {
     const { currQuestion } = this.state;
 
     this.setState({
-      displayForm:  currQuestion === 1 ? false : true,
-      currQuestion: currQuestion - 1
+      displayForm:  currQuestion === 0 ? false : true,
+      currQuestion: currQuestion === 0 ? 0 : currQuestion - 1
     });
   }
 
