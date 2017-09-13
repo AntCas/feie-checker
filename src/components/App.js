@@ -12,7 +12,7 @@ class App extends Component {
         </div>
         <div className="App-content">
 
-          <div className="card">
+          <div className="title-card">
             <div className="card-content">
               <h1>Do you qualify for the Foreign Income Tax Exemption?</h1>
               <div className="sub-headers">
