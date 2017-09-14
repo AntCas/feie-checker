@@ -7,7 +7,10 @@
 }
 
 .form-card .card-content {
+  display: flex;
+  flex-direction: column;
   align-self: center;
+  min-height: 348px;
   
   padding: 0 12px;
 }
@@ -82,6 +85,7 @@
 
 .form-card .navigation .button-container:last-child {
   order: 1;
+  margin-top: 24px;
 }
 
 @media (min-width: 769px) {
@@ -91,13 +95,13 @@
 
   .form-card .navigation .button-container:first-child {
     order: 1;
-    margin-top: 0px;
-    margin: 0;
+    margin: 24px 0 0 0;
     align-self: center;
   }
 
   .form-card .navigation .button-container:last-child {
     order: 2;
+    margin-top: 24px;
     margin-left: 24px;
   }
 }
