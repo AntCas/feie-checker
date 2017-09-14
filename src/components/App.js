@@ -46,33 +46,33 @@ const PASS = 'pass',
 
 const questions = [{
   testName: TIME_TEST,
-  question: 'Will you spend at least a year outside of the US?',
+  question: 'Will you spend at least a year living outside of the USA?',
   helpText: 'You must live outside the US for 12 consecutive months in order to qualify.',
   answers:  {[YES]: 0, [NO]: FAIL}
 }, {
   testName: PRESENCE,
   question: 'Will you spend fewer than 35 days in the US?',
-  helpText: 'If yes, then you qualify under the Physical Presence Test, If no then you must qualify under the BFR test. Note that if you spend more than 24 hours anywhere that is not in a foreign country (international waters, traveling between two foreign countries by passing through the USA, most likely Antartica), that will count as a full day towards your 35 day limit. More information about specific scenarios: ',
+  helpText: 'If yes, then you qualify under the Physical Presence Test, If no then you must qualify under the Bona Fide Residence test. Your time abroad does not include travel over international waters lasting more than 24 hours.',
   answers:  {[YES]: PASS, [NO]: 0}
 }, {
   testName: GOV_JOB,
   question: 'Do you work for the US Government or Military?',
-  helpText: 'If you are living in the foreign country as part of a government contract or stationed there as part of the armed forces, then you do not qualify as a BFR.',
+  helpText: 'If you are living in the foreign country as part of a government contract or stationed there as part of the armed forces, then you do not qualify as a bona fide resident.',
   answers:  {[YES]: FAIL, [NO]: 0}
 }, {
   testName: FOR_HOUSING,
   question: 'What is you housing situation?',
-  helpText: 'Answering “a” is best and gives you a high chance of qualifying, “b” and “c” are acceptable, “d” if you have free housing through an employer you do not qualify',
+  helpText: 'Purchasing a home is best, renting is acceptable, but if you have free housing through an employer you do not qualify.',
   answers: {[PURCHASED_HOUSE]: 5, [RENTED_HOUSE]: 1, [RENTED_ROOM]: 0, [EMPLOYER]: FAIL}
 }, {
   testName: FOR_FAMILY,
-  question: 'Did any of you family live with you abroad during any part of the tax year?',
-  helpText: 'If you’re able to answer Yes to this question that is a big plus in your favor, especially if any of them are citizens of the foreign country (you would make a note of this on line 12a of form 2555).',
+  question: 'Did any of your family live with you abroad during any part of the tax year?',
+  helpText: "Answering yes here is very good, especially if any of them are citizens of the foreign country in which you're living.",
   answers:  {[YES_AND_CITIZEN]: 5, [YES]: 3, [NO]: 0}
 }, {
   testName: STATEMENT,
-  question: 'Have you submitted a statement to the authorities of the foreign country where you claim bona fide residence that you are not a resident of that country?',
-  helpText: 'The answers to this question should always be “No”.',
+  question: 'Have you submitted a statement to the the foreign country that you are not a resident of that country?',
+  helpText: 'The answers to this question must be "No" in order to qualify.',
   answers:  {[YES]: FAIL, [NO]: 0}
 }, {
   testName: FOR_TAX,
@@ -82,17 +82,17 @@ const questions = [{
 }, {
   testName: WORK_CONTRACT,
   question: 'Is your work contract based for a specific period of time?',
-  helpText: 'In general, jobs with a finite length will not qualify you under BFR status.',
+  helpText: 'In general, jobs with a finite length will not qualify you as a bona fide resident.',
   answers:  {[YES]: -1, [NO]: 2}
 }, {
   testName: VISA,
-  question: 'What type of visa did you use to enter the foreign country?',
-  helpText: 'If you have a student visa or a temporary work visa (renewal of which is continent on your employment) then you care not a BFR. If you are a permanent resident or hold citizenship then you  most likely qualify as a BFR regardless of other factors.',
+  question: 'What visa did you use to enter the foreign country?',
+  helpText: 'If you hold a student visa or a temporary work visa then you most likely are not a bona fide resident. If you are a permanent resident or a dual citizen then you most likely qualify regardless of other factors.',
   answers:  {[STUDENT_VISA]: -5, [TEMPORARY_VISA]: -5, [WORK_VISA]: 1, [PERM_RESIDENT]: 5, [DUAL_CITIZEN]: 5, [NO_VISA]: 0, [OTHER]: 0}
 }, {
   testName: VISA_LIMIT,
   question: '(If answered “* Visa”) Does your visa limit the length of your stay or employment in a foreign country?',
-  helpText: 'If yes, then you most likely do not qualify as a BFR.',
+  helpText: 'If so, you do not qualify under bona fide residence status. If you can easily renew your visa, answer "No".',
   answers:  {[YES]: FAIL, [NO]: 0}
 }, {
   testName: USA_HOME,
@@ -102,7 +102,7 @@ const questions = [{
 }, {
   testName: USA_FAMILY,
   question: '(If yes to the previous) Do any of your family members live there?',
-  helpText: 'If yes, you might still qualify as a BFR, but most likely you do not qualify.',
+  helpText: 'You are much less likely to qualify as a bona fide resident if so.',
   answers:  {[YES]: -5, [NO]: 1}
 }];
 
