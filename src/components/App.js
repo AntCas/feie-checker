@@ -204,7 +204,7 @@ class App extends Component {
         </div>
         <div className="App-footer">
           <hr />
-          <span>Copyright 2017</span>
+          <span>Copyright 2017 &copy;</span>
           <a onClick={ this.toggleTermsOfService }>Terms of Service</a>
         </div>
      </div>
