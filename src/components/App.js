@@ -141,6 +141,9 @@ class App extends Component {
   prevQuestion = () => {
     const { currQuestion } = this.state;
 
+    // Erase answers as you go backwards through the form
+    questions[currQuestion]['response'] = null;
+
     this.setState({
       displayForm:  currQuestion === 0 ? false : true,
       currQuestion: currQuestion === 0 ? 0 : currQuestion - 1

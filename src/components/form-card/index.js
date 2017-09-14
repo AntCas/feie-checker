@@ -9,9 +9,14 @@ export default class FormCard extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      currAnswer: null
-    };
+    this.state = { currAnswer: null };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { content }  = nextProps,
+          { response } = content;
+
+    this.setState({ currAnswer: _.keys(response)[0] });
   }
 
   render() {
@@ -19,8 +24,6 @@ export default class FormCard extends Component {
 
     const { onNext, onBack, content, isLast } = this.props,
           { question, helpText, answers } = content;
-
-    console.log(currAnswer);
 
     const labels = _.map(_.keys(answers), (answer, i) =>
       <label key={ i }>
@@ -48,10 +51,7 @@ export default class FormCard extends Component {
                 label="Back" />
             </div>
             <div className="button-container">
-              <Button onSubmit={ () => {
-                  this.setState({ currAnswer: null })
-                  onNext({[currAnswer]: answers[currAnswer]})
-                }}
+              <Button onSubmit={ () => onNext({[currAnswer]: answers[currAnswer]}) }
                 type="cta"
                 label={ `${isLast ? 'See Results' : 'Next Question'}` } />
             </div>
