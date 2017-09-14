@@ -20,6 +20,8 @@ export default class FormCard extends Component {
     const { onNext, onBack, content, isLast } = this.props,
           { question, helpText, answers } = content;
 
+    console.log(currAnswer);
+
     const labels = _.map(_.keys(answers), (answer, i) =>
       <label key={ i }>
           <input type='radio'
@@ -46,7 +48,10 @@ export default class FormCard extends Component {
                 label="Back" />
             </div>
             <div className="button-container">
-              <Button onSubmit={ () => onNext({[currAnswer]: answers[currAnswer]}) }
+              <Button onSubmit={ () => {
+                  this.setState({ currAnswer: null })
+                  onNext({[currAnswer]: answers[currAnswer]})
+                }}
                 type="cta"
                 label={ `${isLast ? 'See Results' : 'Next Question'}` } />
             </div>
