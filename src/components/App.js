@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import AnalysisCard from './analysis-card';
 import FormCard from './form-card';
 import TitleCard from './title-card';
+import TermsOfService from './terms-of-service';
+
+import logo from '../img/logo.svg';
 
 import './reset.css';
 import './App.css';
@@ -108,9 +111,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-      displayForm:      false,
-      displayAnalysis:  false,
-      currQuestion:     0
+      displayForm:        false,
+      displayAnalysis:    false,
+      currQuestion:       0,
+      showTermsOfService: false
     };
   }
 
@@ -149,12 +153,19 @@ class App extends Component {
       currQuestion:    0
     });
   }
+  
+  toggleTermsOfService = () => {
+    this.setState({
+      showTermsOfService: !this.state.showTermsOfService
+    });
+  }
 
   render() {
     const {
       displayForm,
       displayAnalysis,
-      currQuestion
+      currQuestion,
+      showTermsOfService
     } = this.state;
 
     const questionCounter = `Question ${currQuestion + 1} of ${questions.length}`,
@@ -162,7 +173,9 @@ class App extends Component {
 
     let appContent;
 
-    if (displayForm) {
+    if (showTermsOfService) {
+      appContent = <TermsOfService hideTerms={ this.toggleTermsOfService } />
+    } else if (displayForm) {
       appContent = <FormCard content={ questions[currQuestion] }
                       onNext={ this.nextQuestion }
                       onBack={ this.prevQuestion }
@@ -177,7 +190,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src='../img/logo.svg' alt='' />
+          <img src={logo} alt='' />
           <h2>FEIE Checker</h2>
         </div>
         <div className={ `question-counter ${displayForm || displayAnalysis ? '' : 'hide'}` }>
@@ -192,6 +205,7 @@ class App extends Component {
         <div className="App-footer">
           <hr />
           <span>Copyright 2017</span>
+          <a onClick={ this.toggleTermsOfService }>Terms of Service</a>
         </div>
      </div>
     );
