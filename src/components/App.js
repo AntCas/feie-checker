@@ -177,6 +177,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
+          <img src='../img/logo.svg' alt='' />
           <h2>FEIE Checker</h2>
         </div>
         <div className={ `question-counter ${displayForm || displayAnalysis ? '' : 'hide'}` }>
