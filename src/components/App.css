@@ -31,7 +31,7 @@
 
 .App-content {
   width: 100%;
-  min-height: 80vh;
+  min-height: 85vh;
   margin: auto;
   text-align: left;
 }
@@ -92,7 +92,7 @@
 
 /* Footer Styles */
 .App-footer {
-  margin: 12px auto;
+  margin: 18px auto;
   font-family: Roboto;
   color: grey;
   opacity: .85;

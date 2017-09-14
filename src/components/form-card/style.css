@@ -2,7 +2,7 @@
 .form-card {
   display: flex;
   max-width: 600px;
-  height: 480px;
+  min-height: 600px;
   margin: auto;
 }
 
@@ -66,9 +66,9 @@
 
 /* Form Navigation */
 .form-card .navigation {
+  margin-top: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 48px;
 }
 
 .form-card .navigation .button-container {
