@@ -141,7 +141,7 @@ class App extends Component {
   prevQuestion = () => {
     const { currQuestion } = this.state;
 
-    // Erase answers as you go backwards through the form
+    // Clear responses as you go backwards through the form
     questions[currQuestion]['response'] = null;
 
     this.setState({
@@ -151,6 +151,9 @@ class App extends Component {
   }
 
   startOver = () => {
+    // Clear all responses
+    questions.forEach(question => question.response = null);
+
     this.setState({
       displayAnalysis: false,
       currQuestion:    0
