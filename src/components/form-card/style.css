@@ -9,10 +9,9 @@
 .form-card .card-content {
   display: flex;
   flex-direction: column;
-  align-self: center;
   min-height: 348px;
   
-  padding: 0 12px;
+  padding: 24px 12px 0;
 }
 
 .form-card h1 {
