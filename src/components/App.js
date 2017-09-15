@@ -71,7 +71,7 @@ const questions = [{
   answers:  {[YES_AND_CITIZEN]: 5, [YES]: 3, [NO]: 0}
 }, {
   testName: STATEMENT,
-  question: 'Have you submitted a statement to the the foreign country that you are not a resident of that country?',
+  question: 'Have you submitted a statement to the foreign country that you are not a resident of that country?',
   helpText: 'The answers to this question must be "No" in order to qualify.',
   answers:  {[YES]: FAIL, [NO]: 0}
 }, {

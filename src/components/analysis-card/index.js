@@ -41,7 +41,7 @@ export default class AnalysisCard extends Component {
         positives.push(item);
       } else if (value === 'fail' || value < 0) {
         negatives.push(item);
-      } else {
+      } else if (value === 0) {
         neutrals.push(item);
       }
     });
@@ -51,15 +51,14 @@ export default class AnalysisCard extends Component {
         <div className="card-content">
           <h1>{ `Success! Here are your Results` }</h1>
           <div className="sub-headers">
-            <h2>{ `test` }</h2>
+            <h2>Your score is { `${score}` }, looks like you { `${score >= 5 ? 'pass' : 'fail'}` }</h2>
+            <h2>Positives:</h2>
+              { positives }
+            <h2>Negatives:</h2>
+              { negatives }
+            <h2>Neutrals:</h2>
+              { neutrals }
           </div>
-          <h2>Your score is { `${score}` }, looks like you { `${score >= 5 ? 'pass' : 'fail'}` }</h2>
-          <h2>Positives:</h2>
-            { positives }
-          <h2>Negatives:</h2>
-            { negatives }
-          <h2>Neutrals:</h2>
-            { neutrals }
           <Button onSubmit={ onSubmit }
             type="cta"
             label="Start Over" />
