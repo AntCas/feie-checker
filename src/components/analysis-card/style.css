@@ -2,7 +2,6 @@
 .analysis-card {
   display: flex;
   max-width: 600px;
-  height: 480px;
   margin: auto;
 }
 
