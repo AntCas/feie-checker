@@ -23,6 +23,9 @@ export default class AnalysisCard extends Component {
 
     let score = 0;
 
+    let didPass = false,
+        didFail = false;
+
     _.map(results, (result, i) => {
       const response = result.response,
             key      = _.keys(response)[0],
@@ -33,31 +36,47 @@ export default class AnalysisCard extends Component {
       const item = (
         <div className="item" key={ i }>
           <h3>{ `${result.question}` }</h3>
-          <p>{ `${key}`  }</p>
+          <p>you answered: { `${key}`  }</p>
         </div>      
       );
 
-      if (value === 'pass' || value > 0) {
+      if (value === 'pass') {
+        didPass = true;
         positives.push(item);
-      } else if (value === 'fail' || value < 0) {
+      } else if (value > 0) {
+        positives.push(item);
+      } else if (value === 'fail') {
+        didFail = true;
+        negatives.push(item);
+      } else if (value < 0) {
         negatives.push(item);
       } else if (value === 0) {
         neutrals.push(item);
       }
     });
 
+    let successMessage;
+
+    if (score > 7 || didPass) {
+      successMessage = 'Congrats! You most likely qualify.';
+    } else if (score < 5 || didFail) {
+      successMessage = "Aw shucks, looks like you don't qualify";
+    } else {
+      successMessage = "You're on the edge. You may or may not qualify depending on how the IRS interprets your claim";
+    }
+
     return (
       <div className="analysis-card">
         <div className="card-content">
-          <h1>{ `Success! Here are your Results` }</h1>
+          <h1>{ `Success! Here are your Results:` }</h1>
           <div className="sub-headers">
-            <h2>Your score is { `${score}` }, looks like you { `${score >= 5 ? 'pass' : 'fail'}` }</h2>
-            <h2>Positives:</h2>
-              { positives }
-            <h2>Negatives:</h2>
-              { negatives }
-            <h2>Neutrals:</h2>
-              { neutrals }
+            <h2>{ `${successMessage}` }</h2>
+            <h2>These factors are helping your case</h2>
+              { positives.length > 0 ? positives : "there's nothing here" }
+            <h2>These factors are hurting your case</h2>
+              { negatives.length > 0 ? negatives : "there's nothing here" }
+            <h2>These factors are not affecting your case much one way or the other</h2>
+              { neutrals.length > 0 ? neutrals : "there's nothing here" }
           </div>
           <Button onSubmit={ onSubmit }
             type="cta"

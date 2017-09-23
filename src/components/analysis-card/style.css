@@ -14,6 +14,7 @@
 }
 
 .analysis-card h1 {
+  margin-top: 12px;
   text-align: center;
 
   font-family: Lato;
@@ -22,16 +23,33 @@
 }
 
 .analysis-card .sub-headers {
-  margin-top: 42px;
+  margin-top: 12px;
   padding: 0px 16px;
 }
 
 .analysis-card .sub-headers h2 {
   text-align: center;
+  margin-top: 24px;
 
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
+}
+
+/* Answer Styles */
+.analysis-card .sub-headers .item {
+  margin-top: 18px;
+}
+
+.analysis-card .sub-headers .item h3 {
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.analysis-card .sub-headers .item p {
+  margin-top: 6px;
+  font-family: Roboto;
+  font-weight: 300;
 }
 
 /* Button Styles */

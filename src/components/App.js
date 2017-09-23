@@ -52,7 +52,7 @@ const questions = [{
 }, {
   testName: PRESENCE,
   question: 'Will you spend fewer than 35 days in the US?',
-  helpText: 'If yes, then you qualify under the Physical Presence Test, If no then you must qualify under the Bona Fide Residence test. Your time abroad does not include travel over international waters lasting more than 24 hours.',
+  helpText: 'If you answer yes, then you qualify under the Physical Presence Test. Otherwise, you may still qualify under the Bona Fide Residence test. Keep in mind that your time abroad does not include travel over international waters lasting more than 24 hours.',
   answers:  {[YES]: PASS, [NO]: 0}
 }, {
   testName: GOV_JOB,
@@ -62,7 +62,7 @@ const questions = [{
 }, {
   testName: FOR_HOUSING,
   question: 'What is you housing situation?',
-  helpText: 'Purchasing a home is best, renting is acceptable, but if you have free housing through an employer you do not qualify.',
+  helpText: 'Purchasing a home is best and renting is acceptable, but if you have free housing through an employer then you do not qualify as a bona fide resident of a foreign country.',
   answers: {[PURCHASED_HOUSE]: 5, [RENTED_HOUSE]: 1, [RENTED_ROOM]: 0, [EMPLOYER]: FAIL}
 }, {
   testName: FOR_FAMILY,
@@ -72,7 +72,7 @@ const questions = [{
 }, {
   testName: STATEMENT,
   question: 'Have you submitted a statement to the foreign country that you are not a resident of that country?',
-  helpText: 'The answers to this question must be "No" in order to qualify.',
+  helpText: 'The answer to this question must be "No" in order to qualify as a bona fide resident.',
   answers:  {[YES]: FAIL, [NO]: 0}
 }, {
   testName: FOR_TAX,
@@ -82,17 +82,17 @@ const questions = [{
 }, {
   testName: WORK_CONTRACT,
   question: 'Is your work contract based for a specific period of time?',
-  helpText: 'In general, jobs with a finite length will not qualify you as a bona fide resident.',
+  helpText: 'In general, if your contract is for a finite length of time you will not qualify you as a bona fide resident.',
   answers:  {[YES]: -1, [NO]: 2}
 }, {
   testName: VISA,
   question: 'What visa did you use to enter the foreign country?',
-  helpText: 'If you hold a student visa or a temporary work visa then you most likely are not a bona fide resident. If you are a permanent resident or a dual citizen then you most likely qualify regardless of other factors.',
+  helpText: 'If you hold a student visa or a temporary work visa then you are most likely not a bona fide resident. If you are a permanent resident or a dual citizen then you most likely qualify regardless of other factors.',
   answers:  {[STUDENT_VISA]: -5, [TEMPORARY_VISA]: -5, [WORK_VISA]: 1, [PERM_RESIDENT]: 5, [DUAL_CITIZEN]: 5, [NO_VISA]: 0, [OTHER]: 0}
 }, {
   testName: VISA_LIMIT,
-  question: '(If answered “* Visa”) Does your visa limit the length of your stay or employment in a foreign country?',
-  helpText: 'If so, you do not qualify under bona fide residence status. If you can easily renew your visa, answer "No".',
+  question: 'Does your visa limit the length of your stay or employment in a foreign country?',
+  helpText: 'If your visa limits your length of stay, then you do not qualify under bona fide residence status. If you can easily renew your visa, answer "No".',
   answers:  {[YES]: FAIL, [NO]: 0}
 }, {
   testName: USA_HOME,
@@ -101,7 +101,7 @@ const questions = [{
   answers:  {[YES]: -1, [NO]: 1}
 }, {
   testName: USA_FAMILY,
-  question: '(If yes to the previous) Do any of your family members live there?',
+  question: 'If you answered "Yes" to the previous, do any of your family members live there? Otherwise, answer "No".',
   helpText: 'You are much less likely to qualify as a bona fide resident if so.',
   answers:  {[YES]: -5, [NO]: 1}
 }];
