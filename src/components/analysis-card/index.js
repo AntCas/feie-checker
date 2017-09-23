@@ -57,12 +57,16 @@ export default class AnalysisCard extends Component {
 
     let successMessage;
 
-    if (score > 7 || didPass) {
+    if (didPass) {
       successMessage = 'Congrats! You most likely qualify.';
-    } else if (score < 5 || didFail) {
-      successMessage = "Aw shucks, looks like you don't qualify";
+    } else if (didFail) {
+      successMessage = "Aw shucks, looks like you don't qualify.";
+    } else if (score > 7) {
+      successMessage = 'Congrats! You most likely qualify.';
+    } else if (score < 5) {
+      successMessage = "Aw shucks, looks like you don't qualify.";
     } else {
-      successMessage = "You're on the edge. You may or may not qualify depending on how the IRS interprets your claim";
+      successMessage = "You're on the edge. You may or may not qualify depending on how the IRS interprets your claim.";
     }
 
     return (
@@ -70,13 +74,25 @@ export default class AnalysisCard extends Component {
         <div className="card-content">
           <h1>{ `Success! Here are your Results:` }</h1>
           <div className="sub-headers">
-            <h2>{ `${successMessage}` }</h2>
-            <h2>These factors are helping your case</h2>
-              { positives.length > 0 ? positives : "there's nothing here" }
-            <h2>These factors are hurting your case</h2>
-              { negatives.length > 0 ? negatives : "there's nothing here" }
-            <h2>These factors are not affecting your case much one way or the other</h2>
-              { neutrals.length > 0 ? neutrals : "there's nothing here" }
+            <h2 className="success-message">{ `${successMessage}` }</h2>
+            <div className="result-section">
+              <h2>These factors are helping your case</h2>
+              <div className="answers">
+                { positives.length > 0 ? positives : "there's nothing here" }
+              </div>
+            </div>
+            <div className="result-section">
+              <h2>These factors are hurting your case</h2>
+              <div className="answers">
+                { negatives.length > 0 ? negatives : "there's nothing here" }
+              </div>
+            </div>
+            <div className="result-section">
+              <h2>These factors are not affecting your case much one way or the other</h2>
+              <div className="answers">
+                { neutrals.length > 0 ? neutrals : "there's nothing here" }
+              </div>
+            </div>
           </div>
           <Button onSubmit={ onSubmit }
             type="cta"

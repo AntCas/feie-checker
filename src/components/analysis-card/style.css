@@ -35,17 +35,38 @@
   line-height: 1.5;
 }
 
-/* Answer Styles */
-.analysis-card .sub-headers .item {
-  margin-top: 18px;
+.analysis-card .sub-headers h2.success-message {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #cccccc;
+  background: #dfdfdf;
 }
 
-.analysis-card .sub-headers .item h3 {
+/* Answer Styles */
+.analysis-card .sub-headers .result-section {
+}
+
+.analysis-card .sub-headers .result-section h2 {
+  text-align: left;
+}
+
+.analysis-card .sub-headers .result-section .item {
+  padding-bottom: 18px;
+  border-top: 1px solid #dfdfdf;
+}
+
+
+.analysis-card .sub-headers .result-section .item:first-child {
+  border-top: none;
+}
+
+.analysis-card .sub-headers .result-section .item h3 {
+  margin-top: 18px;
   font-family: Roboto;
   font-size: 16px;
 }
 
-.analysis-card .sub-headers .item p {
+.analysis-card .sub-headers .result-section .item p {
   margin-top: 6px;
   font-family: Roboto;
   font-weight: 300;
