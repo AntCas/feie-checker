@@ -1,5 +1,6 @@
 /* Card Styles */
 .title-card {
+  align-self: center;
   display: flex;
   max-width: 600px;
   height: 480px;

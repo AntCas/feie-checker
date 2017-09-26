@@ -59,13 +59,15 @@
 .analysis-card .sub-headers .result-section .item {
   padding-bottom: 18px;
   border-top: 1px solid #dfdfdf;
+  text-align: left;
 }
 
 .analysis-card .sub-headers .result-section .answers {
-  padding: 0 24px;
+  padding: 12px 24px;
   font-family: Roboto;
   font-size: 14px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .analysis-card .sub-headers .result-section .item:first-child {

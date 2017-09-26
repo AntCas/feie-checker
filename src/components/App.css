@@ -30,8 +30,9 @@
 }
 
 .App-content {
+  display: flex;
   width: 100%;
-  min-height: 85vh;
+  min-height: 79vh;
   margin: auto;
   text-align: left;
 }
@@ -92,11 +93,15 @@
 
 /* Footer Styles */
 .App-footer {
-  margin: 18px auto;
+  margin: 48px auto 24px;
   font-family: Roboto;
   color: grey;
   opacity: .85;
   font-size: 14px;
+}
+
+.App-footer .footer-content {
+  margin-top: 18px;
 }
 
 .App-footer a {
