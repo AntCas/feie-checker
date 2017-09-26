@@ -13,7 +13,7 @@
 }
 
 .analysis-card h1 {
-  margin-top: 12px;
+  margin-top: 30px;
   text-align: center;
 
   font-family: Lato;
@@ -28,7 +28,6 @@
 
 .analysis-card .sub-headers h2 {
   text-align: center;
-  margin-top: 24px;
 
   font-family: Roboto;
   font-size: 20px;
@@ -36,18 +35,25 @@
 }
 
 .analysis-card .sub-headers h2.success-message {
-  padding: 12px;
+  margin-top: 30px;
+  padding: 24px;
   border-radius: 12px;
-  border: 1px solid #cccccc;
-  background: #dfdfdf;
+  border: 1px solid #dfdfdf;
+  background: #f9f9f9;
 }
 
 /* Answer Styles */
 .analysis-card .sub-headers .result-section {
+  border: 1px solid #dfdfdf;
+  border-radius: 12px;
+  margin: 12px 0;
 }
 
 .analysis-card .sub-headers .result-section h2 {
-  text-align: left;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 24px;
 }
 
 .analysis-card .sub-headers .result-section .item {
@@ -55,6 +61,12 @@
   border-top: 1px solid #dfdfdf;
 }
 
+.analysis-card .sub-headers .result-section .answers {
+  padding: 0 24px;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
 .analysis-card .sub-headers .result-section .item:first-child {
   border-top: none;
@@ -70,6 +82,7 @@
   margin-top: 6px;
   font-family: Roboto;
   font-weight: 300;
+  font-size: 16px;
 }
 
 /* Button Styles */
