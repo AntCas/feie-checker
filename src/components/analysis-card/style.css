@@ -85,6 +85,37 @@
   font-size: 16px;
 }
 
+/* Legal Disclaimer */
+.analysis-card .sub-headers .disclaimer {
+  border: 1px solid #dfdfdf;
+  border-radius: 12px;
+  margin: 12px 0;
+  padding-bottom: 24px;
+
+  font-family: Roboto;
+}
+
+.analysis-card .sub-headers .disclaimer h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 24px;
+  font-size: 16px;
+}
+
+.analysis-card .sub-headers .disclaimer p {
+  padding-bottom: 12px;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.analysis-card .sub-headers .disclaimer a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* Button Styles */
 .analysis-card .button {
   display: flex;

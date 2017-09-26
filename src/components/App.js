@@ -188,7 +188,8 @@ class App extends Component {
                       isLast={ currQuestion === questions.length - 1 } />;
     } else if (displayAnalysis) {
       appContent = <AnalysisCard onSubmit={ this.startOver }
-                      results={ questions } />;
+                      results={ questions }
+                      toggleTermsOfService={ this.toggleTermsOfService } />;
     } else {
       appContent = <TitleCard onSubmit={ this.getMyResults } />;
     }

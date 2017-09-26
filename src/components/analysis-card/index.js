@@ -15,7 +15,7 @@ export default class AnalysisCard extends Component {
   }
 
   render() {
-    const { onSubmit, results } = this.props;
+    const { onSubmit, results, toggleTermsOfService } = this.props;
 
     const positives = [],
           negatives = [],
@@ -92,6 +92,11 @@ export default class AnalysisCard extends Component {
               <div className="answers">
                 { neutrals.length > 0 ? neutrals : "no results" }
               </div>
+            </div>
+            <div className="disclaimer">
+              <h2>Legal Disclaimer</h2>
+              <p>This test is not intended as legal advise, and should not be used as a substitute for seeking legal counsel.</p>
+              <p>By using this website you agree to be bound by our <a onClick={ toggleTermsOfService }>Terms of Service</a>.</p>
             </div>
           </div>
           <Button onSubmit={ onSubmit }
