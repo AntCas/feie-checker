@@ -11,7 +11,7 @@ export default class TitleCard extends Component {
     return (
       <div className="title-card">
         <div className="card-content">
-          <h1>Do you qualify for the Foreign Income Tax Exemption?</h1>
+          <h1>Do you qualify for the Foreign Earned Income Tax Exclusion?</h1>
           <div className="sub-headers">
             <h2>The FEIE can save you thousands of dollars per year if you live abroad.</h2>
             <h2>Take this test to see if you qualify.</h2>

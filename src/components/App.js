@@ -198,7 +198,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} alt='' />
-          <h2>FEIE Checker</h2>
+          <h1>FEIE Test</h1>
         </div>
         <div className={ `question-counter ${displayForm || displayAnalysis ? '' : 'hide'}` }>
           <span>{ `${displayAnalysis ? 'Analysis' : questionCounter}`  }</span>
