@@ -199,7 +199,7 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} alt='' />
           <h1>FEIE Test</h1>
-          <a href="https://medium.com/@anthonycastrio/pay-no-income-tax-while-traveling-the-world-2e6aaac69299">What is the foreign earned income exemption?</a>
+          <a href="#">What is the foreign earned income exemption?</a>
         </div>
         <div className={ `question-counter ${displayForm || displayAnalysis ? '' : 'hide'}` }>
           <span>{ `${displayAnalysis ? 'Analysis' : questionCounter}`  }</span>
