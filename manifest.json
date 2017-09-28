@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FEIE Test",
+  "name": "Find out if you qualify for the Foreign Earned Income Exemption.",
   "icons": [
     {
       "src": "favicon.ico",
