@@ -29,6 +29,18 @@
   width: 32px;
 }
 
+.App-header a {
+  align-self: center;
+  text-align: right;
+  margin-right: 24px;
+  margin-left: auto;
+
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 200;
+  color: white;
+}
+
 .App-content {
   display: flex;
   width: 100%;
