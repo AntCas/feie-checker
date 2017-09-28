@@ -2,7 +2,7 @@
 .title-card {
   align-self: center;
   display: flex;
-  max-width: 600px;
+  max-width: 624px;
   height: 480px;
   margin: auto;
 }
@@ -36,5 +36,6 @@
 
 .title-card .button {
   margin: 48px auto 0;
+  width: 180px;
 }
 

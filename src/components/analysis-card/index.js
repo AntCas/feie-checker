@@ -76,19 +76,19 @@ export default class AnalysisCard extends Component {
           <div className="sub-headers">
             <h2 className="success-message">{ `${successMessage}` }</h2>
             <div className="result-section">
-              <h2>These factors are helping your case</h2>
+              <h2>These responses help your case</h2>
               <div className="answers">
                 { positives.length > 0 ? positives : "no results" }
               </div>
             </div>
             <div className="result-section">
-              <h2>These factors are hurting your case</h2>
+              <h2>These responses hurt your case</h2>
               <div className="answers">
                 { negatives.length > 0 ? negatives : "no results" }
               </div>
             </div>
             <div className="result-section">
-              <h2>These factors could go either way</h2>
+              <h2>These responses could go either way</h2>
               <div className="answers">
                 { neutrals.length > 0 ? neutrals : "no results" }
               </div>
