@@ -1,7 +1,10 @@
 /* Page Styles */
+body {
+  background: white;
+}
+
 .App {
   text-align: center;
-  background: white;
 }
 
 .App-header {
