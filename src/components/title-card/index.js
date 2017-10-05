@@ -14,11 +14,11 @@ export default class TitleCard extends Component {
           <h1>Do you qualify for the Foreign Earned Income Exclusion?</h1>
           <div className="sub-headers">
             <h2>The FEIE can save you thousands of dollars per year if you live abroad.</h2>
-            <h2>Take this test to see if you qualify.</h2>
           </div>
           <Button onSubmit={ onSubmit }
             type="cta"
             label="Find Out If I Qualify" />
+          <h2 className="disclaimer">Disclaimer: This service provides a "best-guess" of your eligibility. Accuracy cannot be guaranteed because the IRS considers each case individually. Use at your own discretion.</h2>
         </div>
       </div>
     );
