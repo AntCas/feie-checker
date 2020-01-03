@@ -45,6 +45,7 @@
 
 .title-card .button {
   margin: 48px auto 0;
-  width: 180px;
+  width: fit-content;
+  padding: 0 12px;
 }
 
