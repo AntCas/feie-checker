@@ -17,8 +17,8 @@ export default class TitleCard extends Component {
           </div>
           <Button onSubmit={ onSubmit }
             type="cta"
-            label="Find Out If I Qualify" />
-          <h2 className="disclaimer">Disclaimer: This service provides a "best-guess" of your eligibility. Accuracy cannot be guaranteed because the IRS considers each case individually. Use at your own discretion.</h2>
+            label="Find Out If You Could Qualify" />
+          <h2 className="disclaimer">Disclaimer: This service provides a "best-guess" of your eligibility. Accuracy cannot be guaranteed because the IRS considers each case individually. Use at your own discretion and consult your CPA.</h2>
         </div>
       </div>
     );
