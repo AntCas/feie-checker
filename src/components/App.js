@@ -214,6 +214,7 @@ class App extends Component {
           <hr />
           <div className="footer-content">
             <span>Copyright 2017 &copy;</span>
+            <a href="https://formico.io/">Formico LLC</a>
             <a onClick={ this.toggleTermsOfService }>Terms of Service</a>
           </div>
         </div>
